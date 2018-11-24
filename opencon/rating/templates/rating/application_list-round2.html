@@ -1,0 +1,49 @@
+{% extends "rating/base.html" %}
+
+{% load opencon %}
+
+{% block content %}
+    {% if object_list %}
+    <h2 style="padding-bottom: 10px;">All Round 2 Applications</h2>
+    <p>Below is a list of all applications that have qualified for Round 2 review. Click the person's name to view and rate the application. Applications highlighted in white need more reviews, and anything you have already reviewed is highlighted in blue. Gray means the application already has enough reviews, but you are still welcome to add a review if you wish. Note that there may be multiple pages, and there may be more applications that need reviews toward the end. To be automatically assigned applications to rate, click the "R2 Rate" tab above.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Citizenship</th>
+                <th>Affiliation</th>
+                {#<th>Interest</th>#}
+                <th>R1 Rating</th>
+                <th>R2 Rating</th>
+                {#<th>R2 Ratings</th>#}
+                <th>Status</th>
+                <th>Needs Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+            {% i_rated user.rated2.all object as i_rated_bool %}
+            <tr class="{% if i_rated_bool %}table_highlight_green{% elif not object.need_rating2 %}table_highlight_red{% endif %}">
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'rating:previous2' object.pk %}">{{ object.full_name }}</a></td>
+                <td>{{ object.citizenship_expanded }}</td>
+                <td>{{ object.affiliation_1 }}</td>
+                {#<td>{{ object.area_of_interest_expanded }}</td>#}
+                <td>{% ifequal object.rating1 0 %}-{%else%}{{ object.rating1 | floatformat:2 }}{%endifequal%}</td>
+                <td>{% ifequal object.rating2 0 %}-{%else%}{{ object.rating2 | floatformat:2 }}{%endifequal%}</td>
+                {#<td>{{ object.r2_ratings_count }}</td>#}
+                <td>{{ object.status }}</td>
+                <td>{{ object.need_rating2 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <h4 style="padding-top: 20px; padding-bottom: 10px; padding-left: 5px;">Legend</h4>
+        <p class="table-legend">Applications That Need Rating</p>
+        <p class="table_highlight_green table-legend">Applications You Have Already Rated</p>
+        <p class="table_highlight_red table-legend">Applications That Don't Need Rating</p>
+    {% else %}
+        <h2>No applications have qualified for Round 2 yet. Please help out by conducting Round 1 ratings, or come back later.</h2>
+    {% endif %}
+{% endblock %}

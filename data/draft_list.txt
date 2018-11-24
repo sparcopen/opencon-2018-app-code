@@ -1,0 +1,8 @@
+# DO NOT COMMIT personal data (draft_list.txt) to repository
+
+# how to export data: in LibreOffice Calc: File -> Save a Copy -> Text CSV -> draft_list.txt
+# (Field delimiter: comma, Text delimiter: quote character ("))
+
+# DO NOT use Microsoft Excel to export CSV if possible
+
+# BEFORE IMPORTING: to import gender (OptionalChoiceField), values being male/female, name the field as "gender_0"

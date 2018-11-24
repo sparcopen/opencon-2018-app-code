@@ -1,0 +1,424 @@
+Aalto University
+Aarhus University
+Accra Polytechnic
+Acharya N.G. Ranga Agricultural University
+Addis Ababa University
+Adeyemi University of Education
+Africa Digital Media Institute
+Aga Khan University
+Ain Shams University
+Air University
+Al Akhawayn University
+Al Aqsa University
+Al-Farabi Kazakh National University
+Al-Quds University
+Alexandria University
+Allama Iqbal Medical College
+Allameh Tabataba’i University
+Alzaiem Alazhari University
+Amazonas State University
+Ambrose Alli University
+American University in Bulgaria
+American University of Afghanistan
+American University of Armenia
+American University of Beirut
+American University of Nigeria
+American University, Washington, DC
+Amity University
+Amrita University
+An-Najah National University
+Anadolu University
+Ankara University
+Arizona State University
+Army Medical College, Pakistan
+Ashoka University
+Assiut University
+Atlantic University
+Australian National University
+Babcock University, Nigeria
+Baku State University
+Bangkok University
+Beijing Normal University
+Benha University
+Biju Patnaik University of Technology
+Birmingham City University
+Boston University
+Bournemuth University
+Bowen University
+Brac University
+Brigham Young University
+Brock University
+Brown University
+Cairo University
+California Institute of Technology
+Cambridge University
+Carnegie Mellon University
+Catholic University
+Center for the Studies of Social and Economic Realities (CERES)
+Central European University
+Central Michigan University
+Central University of Rajasthan
+CERN (European Organization for Nuclear Research)
+Changwon National University
+Charles Darwin University
+Cheik Anta Diop University
+City University London
+Clinton Global Initiative University
+College of William & Mary
+Colorado State University
+Columbia University
+Cornell University
+Crimea State Medical University
+CUNY, New York City College of Technology
+Dhaka University
+Dalian University of Technology
+Damodaram Sanjivayya National Law University
+Danang University of Economics
+Danube University Krems
+Dartmouth University
+Dow University of Health Sciences, Pakistan
+Dresden University of Technologies
+Duke University
+Durham University
+EARTH University
+East African School of Library & Information Science
+École Normale Supérieure
+Egerton University
+Elrazi University
+Erasmus University Rotterdam
+Eritrea Institute of Technology
+Federal University of Bahia
+Federal University of Technology, Nigeria
+Florida International University
+Florida State University
+Freie Universität Berlin
+George Washington University
+Georgia Institute of Technology
+Ghent University
+Goethe University
+Gulu University
+Hanoi Medical University
+Harare Institute of Technology
+Harvard University
+Hasanuddin University
+Heidelberg University
+Helsinki Institute for Information Technology
+Hendrix College
+Hong Kong University
+Hong Kong University of Science and Technology
+Humboldt University of Berlin
+Imperial College London
+Indiana University
+Indiana University Purdue University Indianapolis (IUPUI)
+Indira Gandhi Institute of Development Research
+Indira Gandhi National Open University
+Institut Teknologi Bandung
+International Development Research Centre (IDRC)
+Iowa State University
+Islam Medical and Dental College
+Ivan Franko National University of Lviv
+Jisc
+Johns Hopkins University
+Johnson & Wales University
+Jomo Kenyatta University of Agriculture and Technology
+Kabale University
+Kampala International University
+Karolinska Institute
+Kazakh-American Free University
+Kenyatta University
+Khazar University
+King Edward Medical University, Lahore
+King’s College London
+Kohat University of Science and Technology
+Korea University
+Kwame Nkrumah University of Science and Technology
+Kyoto University
+Ladoke Akintola University of Technology
+Lagos State University
+Lahore University of Management Sciences
+Leiden University
+Library of Alexandria
+Lithuanian University of Health Sciences
+London School of Economics and Political Science
+Lund University
+MacEwan University
+Makerere University
+Mansoura University
+Massachusetts Institute of Technology
+Max Planck Institute for Biogeochemistry
+Max Planck Institute for Foreign and International Criminal Law
+Max Planck Institute for Heart and Lung Research
+Max Planck Institute for Medical Research
+Max Planck Institute for Molecular Genetics
+Max Planck Institute for the Study of Societies
+Max Planck Institute of Molecular Plant Physiology
+Max Planck Institute of Neurobiology
+Mayo Clinic
+McGill University
+McMaster University
+Medical University of Lublin
+Medical University of Vienna
+Michigan State University
+Minho University, Portugal
+Mongolian University of Science and Technology
+Mountain of the Moon University
+Mumbai University
+Myanmar Institute of Theology
+Mykolas Romeris University
+Nanjing University
+National Autonomous University of Mexico
+National Economics University, Vietnam
+National Law University, Delhi
+National Law University, Odisha
+National Open University of Nigeria
+National Taiwan University
+National University of Distance Education, Spain
+National University of Kaohsiung
+National University of San Juan, Argentina
+National University of Science and Technology, Pakistan
+National University of Singapore
+Nanyang Technological University
+Nazarbayev University
+Nelson Mandela Metropolitan University
+New York University
+Newcastle University
+North Carolina State University
+Northumbria University
+Northwestern University
+Obafemi Awolowo University, Nigeria
+Ohio State University
+Oklahoma State University
+Ondo State University of Science and Technology
+Open University of Israel
+Open University of Sudan
+Open University of Tanzania
+Oregon Health & Science University (OHSU)
+Oregon State University
+Palo Alto University
+Peking University
+Penn State University
+Peter the Great St. Petersburg Polytechnic University
+Pohang University of Science and Technology
+Princeton University
+Punjab Technical University
+Purbanchal University
+Purdue University Calumet
+Rice University
+Rongo University College
+Royal University of Bhutan
+Rutgers University
+Ryerson University
+Seoul National University
+Simmons College
+Simon Fraser University
+Stanford University
+Swiss Federal Institute of Technology
+Syracuse University
+Tamil Nadu Dr. MGR Medical University
+Taras Shevchenko National University of Kiev
+Technical University of Dortmund
+Technical University of Munich
+Tel Aviv University
+Texas A&M University
+Thammasat University
+Trakya University
+Trinity College, Hartford
+Trinity University, San Antonio
+Tsinghua University
+Tufts University
+Uganda Institute of Information and Communications Technology
+Uganda Martyrs University
+United Nations Development Programme (UNDP)
+Universidad de Antioquia
+Universidad del Rosario
+Universidad Nacional de Costa Rica
+Universidad Surcolombiana
+Universidade Católica Portuguesa, Porto
+Universidade Eduardo Mondlane
+Universidade Federal da Bahia
+Universidade Federal da Paraíba
+Universidade Nova de Lisboa
+Universitas Indonesia
+Universitas Terbuka
+Université Cheikh Anta Diop
+Université de Ouagadougou
+Université Laval / Laval University
+Universiteit Stellenbosch
+University Brunei Darussalam
+University Carlos III de Madrid
+University College Hospital, Ibadan
+University College London
+University of Aberdeen, Scotland
+University of Abomey-Calavi
+University of Abuja
+University of Agriculture Peshawar Pakistan
+University of Amsterdam
+University of Aveiro
+University of Belgrade
+University of Benin
+University of Biskra
+University of Bonn
+University of Boras
+University of Botswana
+University of Bradford
+University of Brasilia
+University of Brest
+University of Bristol
+University of British Columbia
+University of Bucharest
+University of Buea
+University of Buenos Aires
+University of Burundi
+University of Calabar
+University of Calgary
+University of California Berkeley
+University of California Davis
+University of California Irvine
+University of California Los Angeles
+University of California San Diego
+University of California San Francisco
+University of California Santa Barbara
+University of Cambridge
+University of Cape Coast
+University of Cape Town
+University of Central Florida
+University of Cepromec
+University of Chicago
+University of Chile
+University of Connecticut
+University of Copenhagen
+University of Cyprus
+University of Dar es Salaam
+University of Delhi
+University of Dhaka
+University of Dodoma
+University of Dundee
+University of Edinburgh
+University of El Manar
+University of Florida
+University of Ghana
+University of Glasgow
+University of Goettingen
+University of Gondar
+University of Groningen
+University of Guelph
+University of Gujrat
+University of Haripur
+University of Hawaii
+University of Health Sciences, Lahore
+University of Helsinki
+University of Hong Kong
+University of Hyderabad
+University of Ibadan, Nigeria
+University of Iceland
+University of Illinois at Chicago
+University of Illinois at Urbana-Champaign
+University of Ilorin
+University of Indonesia
+University of Johannesburg
+University of Jos, Nigeria
+University of Karachi
+University of Kent
+University of Kerala
+University of Khartoum
+University of Lagos
+University of Latvia
+University of Leeds
+University of Liberia
+University of Ljubljana
+University of London
+University of Malakand
+University of Malaya
+University of Manchester
+University of Maryland University College
+University of Maryland, Baltimore County
+University of Mauritius
+University of Melbourne
+University of Michigan
+University of Mines and Technology
+University of Minho
+University of Minnesota
+University of Mississippi
+University of Missouri
+University of Montana
+University of Montpellier
+University of Mumbai
+University of Munich
+University of Münster
+University of Nairobi
+University of Namibia
+University of New South Wales
+University of Newcastle, Australia
+University of Nis, Serbia
+University of North Carolina Charlotte
+University of North Texas
+University of Notre Dame
+University of Nottingham
+University of Novi Sad
+University of Ontario
+University of Ottawa
+University of Oulu
+University of Oviedo
+University of Oxford
+University of Parakou
+University of Passau
+University of Pecs
+University of Pennsylvania
+University of Peradeniya
+University of Peshawar
+University of Pittsburgh
+University of Porto
+University of Pretoria
+University of Professional Studies, Accra
+University of Queensland
+University of Regina
+University of Rochester
+University of Rwanda
+University of San Carlos
+University of San Diego
+University of São Paulo
+University of Science and Technology
+University of Science and Technology of China
+University of Sidi Mohammed Ben Abdellah
+University of Sierra Leone
+University of Sousse
+University of South Africa
+University of Southampton
+University of Southern California
+University of Southern Denmark
+University of Sydney
+University of Texas Austin
+University of the Free State
+University of The Gambia
+University of the Philippines
+University of the Punjab
+University of the West Indies
+University of Tokyo
+University of Toronto
+University of Tübingen
+University of Venda
+University of Victoria
+University of Vienna
+University of Warsaw
+University of Washington
+University of Western Australia
+University of Western Ontario
+University of Wisconsin Madison
+University of Wyoming
+University of Yaounde
+University of Zagreb
+University of Zambia
+University of Zimbabwe
+University of Zurich
+Uppsala University
+Utrecht University
+Virginia Tech
+Vrije Universiteit Brussel
+Wageningen University and Research Center
+Warsaw Medical University
+West Virginia University
+Worcester Polytechnic Institute
+Wright State University
+Yale University
+York University
+Zagazig University

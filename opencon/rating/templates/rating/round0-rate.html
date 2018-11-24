@@ -1,0 +1,51 @@
+{% extends "rating/base.html" %}
+{% load bootstrap %}
+{% block content %}
+    {#{% include 'rating/popup_skip.html' %}#}
+
+    <div class="col-md-6 overflow">
+        <h2 class="rate-title">Application</h2>
+        {% for field in application_data %}
+        {% if field.name == "customfield" %}
+            <p>INSTRUCTIONS BEFORE CUSTOMFIELD</p>
+        {% endif %}
+        {% if field.content %}
+            <p><strong>{{field.title}}</strong><br>{{ field.content }}</p>
+        {% endif %}
+        {% endfor %}
+        <hr>
+    </div>
+
+    <div class="col-md-6 overflow">
+    <h2 class="rate-title">Round 0 Rating</h2>
+    <p style="padding-bottom: 10px">Do you recommend this application for Round 1 rating?</p>
+    <input type="submit" class="btn-rate btn-yes" value="Yes" onclick="document.getElementById('id_comments').value = document.getElementById('id_comments_x').value; document.getElementById('id_decision').value = 'yes'; document.rate.submit();">
+    <input type="submit" class="btn-rate btn-no" value="No" onclick="document.getElementById('id_comments').value = document.getElementById('id_comments_x').value; document.getElementById('id_decision').value = 'no'; document.rate.submit();">
+    <p style="padding-bottom: 15px"></p>
+    <p><label for="id_comments_x">Comments (Optional)</label><br><textarea cols="50" id="id_comments_x" maxlength="500" name="comments_x" rows="2"></textarea></p>
+    <p style="padding-bottom: 15px">Clicking Yes or No automatically records your rating, then moves you to the next application. You can also click below to give the application a Round 1 rating yourself, or to skip the application without making a recommendation.</p>
+    {% if user.is_round_1_reviewer %}{# only display "R1 Rate Now" button if the person has R1 permission, otherwise they'd see an error after clicking #}
+    <input type="submit" class="btn-rate btn-ratenow" value="R1 Rate Now" onclick="document.getElementById('id_decision').value = 'review'; document.rate.submit();">
+    {% endif %}
+    <input type="submit" class="btn-rate btn-skipnow" value="Skip" onclick="window.location.reload();">
+    <br><br><br>
+
+    {# DO NOT DELETE "Alternate Form": although it's not displayed, it is crucial (and is accessed via JavaScript) #}
+    <div style="display: none;">
+    <details>
+    <summary>Alternate Form</summary>
+        <p>This form is here for compatibility reasons. Use it if the buttons above do not work.</p>
+        <hr>
+        <form role="form" name="rate" method="post">
+            {% csrf_token %}
+            {{ forms.rate|bootstrap }}
+            <input class="btn btn-primary" type="submit" value="Submit Rating" />
+            <a href="#" class="btn btn-skip" id="skip" onclick="window.location.reload();">Skip</a>
+        </form>
+    </details>
+    <br>
+    </div>
+        {% include 'rating/rate-bottom.html' %}
+    </div>
+
+{% endblock %}

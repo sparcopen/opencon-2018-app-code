@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}OpenCon 2018 Rating{% endblock %}
+
+{% block menu %}
+    <div class="container" style="padding-bottom: -10px;">
+    <nav>
+        <ul class="nav nav-pills" style="padding-top:5px">
+                <li class="nav-item"><img src="{% static 'img/favicon.png' %}" alt="OpenCon logo" style="width=40px; height:40px; padding-right:15px; padding-left: 10px;"></li>
+            {% if user.is_round_0_reviewer %}
+                <li class="nav-item nav-r0"><a href="{% url 'rating:rate_round0' %}">R0 | Rate </a></li>
+            {% endif %}
+            {% if user.is_round_1_reviewer %}
+                <li class="nav-item nav-r1"><a href="{% url 'rating:rate_round1' %}">R1 | Rate </a></li>
+                <li class="nav-item nav-r1"><a href="{% url 'rating:round1_needs_review' %}">R1 | Filter</a></li>
+                {#<li class="nav-item nav-r1"><a href="{% url 'rating:all1' %}">R1 | All Applications</a></li>#}
+                <li class="nav-item nav-r1"><a href="{% url 'rating:previous1' %}">R1&nbsp;|&nbsp;History</a></li>
+            {% endif %}
+            {% if user.is_round_2_reviewer %}
+                <li class="nav-item nav-r2"><a href="{% url 'rating:rate_round2' %}">R2 | Rate </a></li>
+                <li class="nav-item nav-r2"><a href="{% url 'rating:all2' %}">R2 | Full List</a></li>
+            {% endif %}
+        </ul>
+        <p style="padding-left: 65px; padding-top: 5px;">{# #fyi -- all users should now see all leaderboards (because transparency), not just leaderboards for the rating rounds they have permissions for -- e.g. checks for {% if user.is_round_2_reviewer %} have been removed both from these links and from the respective views #}
+            <a href="{% url 'rating:stats0' %}">&nbsp;&nbsp;R0 Leaderboard&nbsp;&nbsp;</a>
+            <a href="{% url 'rating:stats1' %}">&nbsp;&nbsp;R1 Leaderboard&nbsp;&nbsp;</a>
+            <a href="{% url 'rating:stats2' %}">&nbsp;&nbsp;R2 Leaderboard&nbsp;&nbsp;</a>
+        </p>
+    </nav>
+    </div>
+    <div style="width: 100%; height: 1px; background-color: #eee;"></div>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+    <div class="container">
+    <hr class="hr-bottom">
+    <p><a href="{% url 'rating:logout' %}">Log out</a>&nbsp; | &nbsp;Logged in as {{ user.email }}</p>
+    </div>
+{% endblock %}

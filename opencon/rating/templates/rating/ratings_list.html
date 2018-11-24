@@ -1,0 +1,37 @@
+{% extends "rating/base.html" %}
+
+{% block content %}
+    {% if object_list %}
+    <h2>Round 1 Rating History</h2>
+    <p>Below is the list of applications you have rated and scores you have given. If you believe there is a mistake in one of your ratings, please contact <a href="mailto:nicole@sparcopen.org">nicole@sparcopen.org</a>.</p>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Affiliation</th>
+                <th>Rating</th>
+                {#<th>Acceptance</th>#}
+            </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ object.application.full_name }}</td>
+                {# #todo -- fix bug when submitted application is not edited but instead rated twice & make edit link clickable again #}
+                {#<td><a href="{% url 'rating:previous1' object.pk %}">{{ object.application.full_name }}</a></td>#}
+                <td>{{ object.application.citizenship_expanded }}</td>
+                <td>{{ object.application.affiliation_1 }}</td>
+                <td>{{ object.rating }}</td>
+                {#<td>{{ object.acceptance }}</td>#}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <h1>You haven't rated any applications yet.</h1>
+    {% endif %}
+{% endblock %}

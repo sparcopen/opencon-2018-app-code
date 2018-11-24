@@ -1,0 +1,16 @@
+{% extends 'application/base.html' %}
+
+{# #todo -- redirect to http://www.opencon2018.org/thank_you #}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+        <h3>Application Submitted</h3>
+        <p>Thanks for applying to OpenCon 2018! We have received your application and look forward to reviewing it. A confirmation has been sent to the email address you provided.</p>
+        <p>
+            Please help us spread the word about OpenCon 2018 by sharing this link:
+            <a href="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:referral' application.my_referral %}">
+                {% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:referral' application.my_referral %}
+            </a>
+        </p>
+    </div>
+{% endblock %}

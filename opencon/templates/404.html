@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+
+    <p style="text-align: center; padding-top: 110px; padding-bottom: 10px;">
+        <img src="{% static 'img/404.png' %}" width="400">
+    </p>
+
+    <h2 style="text-align: center; padding-bottom: 20px;">Oh noes! That page doesn't exist.</h2>
+{% comment %}
+    <h3 style="text-align: center">
+        <a href="https://apply.opencon2018.org/referral/404">Apply for OpenCon 2018</a>
+    </h3>
+{% endcomment %}
+    <h3 style="text-align: center">
+        <a href="http://www.opencon2018.org">Return to Home</a>
+    </h3>
+
+    </div>
+
+{% endblock %}

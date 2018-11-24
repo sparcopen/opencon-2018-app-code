@@ -1,0 +1,18 @@
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title popup-title">You've got a head start on your application!</h4>
+      </div>
+      <div class="modal-body">
+        <p>There is a draft application associated with your email address in our system. This could be because you already started an application this year. It could also be because you applied last year, and we pre-loaded some of your basic information to save you time.</p>
+        <p>To pick up where you left off, click <strong style="color: #0E4957">Access Draft</strong>. We will send you an email with a secure link where you can begin editing your draft right away. If you prefer to start a new application, click <strong style="color: #0E4957">Cancel</strong> and enter a different email address.</p>
+        <p><em>Note to Firefox users: If you experience trouble accessing your draft, try <a href="{% url 'application:send_email' draft.email %}">clicking here</a> or accessing this page from a different browser.</em></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-popup"><a href="{% url 'application:send_email' draft.email %}">Access Draft</a></button>  <button type="button" class="btn-popup" data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

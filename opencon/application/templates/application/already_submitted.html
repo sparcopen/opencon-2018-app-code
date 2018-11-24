@@ -1,0 +1,15 @@
+{% extends 'application/base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+        {% include 'application/header.html' %}
+        <h1 class="page-title">Decision Sent!</h1>
+        <p>The decision on your application has been sent by email to the address you provided in your application. The email was sent from either <strong>opencon@sparcopen.org</strong> or <strong>joe@sparcopen.org</strong>.</p>
+        <p>If you did not receive the email, please first check your junk and spam folder. Then you may email <strong>joe@sparcopen.org</strong> to request that we re-send the decision. Please put "OpenCon Notification Not Received" in the subject line, and specify your name and email address as it appeared in your application. We will process your request as quickly as we can.</p>
+        <p>OpenCon received a record-setting number of applications this year from inspiring open advocates all over the world. Our application review process involved thousands of hours of volunteer work by hundreds of members of the community to make sure every application gets evaluated. We are grateful for your patience as we have completed this process, and regardless of how this year turns out, we hope to see you around the <a href="https://www.opencon2018.org/community">OpenCon Community</a>.</p>
+        <br>
+        {% include 'application/footer.html' %}
+    </div>
+{% endblock %}

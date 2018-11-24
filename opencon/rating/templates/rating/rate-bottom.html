@@ -1,0 +1,15 @@
+{% load bootstrap %}
+{% if user.organizer %}
+    <br><br>
+    <details>
+    <summary>Change Status (Staff Only)</summary>
+        <strong>Note you will lose any data in the form above.</strong>
+        <hr>
+        <form role="form" method="post">
+            {% csrf_token %}
+            {{ forms.status|bootstrap }}
+            <input class="btn btn-primary" type="submit" value="Change Status" />
+        </form>
+    </details>
+    <br>
+{% endif %}

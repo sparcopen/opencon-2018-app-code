@@ -1,0 +1,60 @@
+{% extends 'application/base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+        {% include 'application/header.html' %}
+
+        {% if application %}
+
+            <h1>Application Under Review</h1>
+            <p>&nbsp;</p>
+
+            <p>Your application was successfully received at <strong>{{ application.created_at | date:"l, F j, Y" }} UTC</strong> and is currently under review. We sent a confirmation email containing the data you submitted to <strong>{{ application.email }}</strong> shortly after you applied. If you did not receive that email, please <a href="https://www.opencon2018.org/faq">contact us</a>.</P>
+            <p>A decision on your application will be sent to <strong>{{ application.email }}</strong> on or before <strong>August 31st</strong>. You can check back at this page anytime to see if your application status has changed.</p>
+            <p>Thanks, and you'll hear from us soon!</p>
+
+            {# https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date #}
+
+        {% elif draft %}
+
+            <h1>Draft Application Saved</h1>
+            <p>&nbsp;</p>
+
+            <p>We have a draft application associated with <strong>{{ application.email }}</strong> saved in our system. Please be sure to complete your application by the deadline of <strong>July 13 at 11:59pm U.S. Pacific Time</strong>, or the information you have entered so far will be considered final.</p>
+            <p>To pick up where you left off, click the button below and we will email you a secure link where you can finish filling it out.<p>
+                
+            <p style="padding-top: 11px;"><a href="{% url 'application:send_email' draft.email %}"><button class="btn btn-primary">Access Draft</button></a></p>
+
+        {% else %}
+
+            {% if request.GET.email %}
+
+                <h1>Application Not Found</h1>
+                <p>&nbsp;</p>
+
+                <p>Hm. We don’t seem to have an application associated with that email address in our system. Try entering another email address you might have used or <a href="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:application-2018' %}">go to the application form</a> to start a new application.</p>
+
+            {% else %}
+
+                <h1>Check Application Status</h1>
+                <p>&nbsp;</p>
+
+                <p>To check your OpenCon application status, enter the email address you used when submitting the application and click "Check".</p>
+
+            {% endif %}
+
+                <p>Access is logged. Abuse (such as querying for other people's e-mail addresses) may result in the termination of your application.</p>
+
+                <form method='GET' action=''>
+                <input type="text" name="email" placeholder="your e-mail address" value="{{ request.GET.email }}">
+                <input type="submit" value="Search">
+                </form>
+
+        {% endif %}
+
+        <br>
+        {% include 'application/footer.html' %}
+    </div>
+{% endblock %}

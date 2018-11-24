@@ -1,0 +1,35 @@
+{% extends "rating/base.html" %}
+
+{% block content %}
+    {% if ranking %}
+
+    <div style="background-color: #eeeeee; padding: 10px 20px 10px 20px; margin: 10px 20px 20px 20px; ">
+        <p>Below you will find statistics on yourself and other members of the review team. Return here to keep track of how many ratings you've done, and how your average score compares to others. As you do more reviews, you'll earn badges -- see the legend at the bottom of the page. If you'd like to adjust the way your name is displayed, or become anonymous, just email <a href="mailto:nicole@sparcopen.org">nicole@sparcopen.org</a>.</p>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name / Nickname</th>
+                <th>Average Score</th>
+                <th>Standard Deviation</th>
+                <th>Total Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in ranking %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ user }}</td>
+                <td>{{ user.avg2|floatformat:2 }}</td>
+                <td>{{ user.standard_deviation2|floatformat:2 }}</td>
+                <td>{{ user.actual_r2_reviews_count }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <h1>No one has rated any application yet. Be the first!</h1>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "rating/base.html" %}
+{% load bootstrap %}
+{% block content %}
+    {% include 'rating/popup_skip.html' %}
+
+    <div class="col-md-6 overflow">
+
+      {% if forms.rate.errors %}
+        <div class="alert alert-error">
+          <strong>Please scroll down to fix the following error(s):</strong>
+          <ul>
+            {% for field in forms.rate %}
+              {% if field.errors %}
+                {% for error in field.errors %}
+                  <li>{{ field.name }}: <a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% if forms.rate.non_field_errors %}
+            {{ forms.rate.non_field_errors }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+        <h2 class="rate-title">Application</h2>
+        {% for field in application_data %}
+        {% if field.name == "customfield" %}
+            <p>INSTRUCTIONS BEFORE CUSTOMFIELD</p>
+        {% endif %}
+        {% if field.content %}
+            <p><strong>{{field.title}}</strong><br>{{ field.content }}</p>
+        {% endif %}
+        {% endfor %}
+        <hr>
+    </div>
+
+    <div class="col-md-6 overflow">
+        <h2 class="rate-title">Round 1 Rating</h2>
+        <p><strong>Criteria</strong></p>
+        <ul class="form-list">
+            <li>Interest in OpenCon’s issue areas</li>
+            <li>Demonstrated previous engagement, concrete ideas for future projects, OR a plan to contribute meaningfully to a current initiative</li>
+            <li>Likelihood to take meaningful action after OpenCon 2018</li>
+        </ul>
+        <br>
+        <form role="form" method="post" action="{% url 'rating:rate_round1' %}?{% if request.GET.return %}return={{ request.GET.return | urlencode }}{% endif %}">
+            {% csrf_token %}
+            {{ forms.rate|bootstrap }}
+            <input class="btn btn-primary" type="submit" value="Submit Rating" />
+            {% if not request.GET.return %}{# only display "skip" if a person is *not* coming from a filter #}
+            <a href="#" class="btn btn-skip" id="skip">Skip</a>
+            {% endif %}
+        </form>
+        {% include 'rating/rate-bottom.html' %}
+    </div>
+
+{% endblock %}

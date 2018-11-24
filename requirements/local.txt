@@ -1,0 +1,9 @@
+-r base.txt
+coverage==4.0.3
+django-debug-toolbar==1.4
+sqlparse==0.1.19
+
+# 2017-06-14`16:46:33 -- add django-extensions (implements `python manage.py runserver_plus` and `python manage.py shell_plus`)
+git+https://github.com/django-extensions/django-extensions.git@1.7.9
+# 2017-06-14`17:09:15 -- django-extensions requires werkzeug
+git+https://github.com/pallets/werkzeug.git@0.12.2

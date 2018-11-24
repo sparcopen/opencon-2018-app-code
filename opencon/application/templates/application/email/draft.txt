@@ -1,0 +1,28 @@
+<p>Dear {{ email }},</p>
+
+<p>Thanks for starting an application for OpenCon 2018. This message confirms that your draft application is saved in our system.</p>
+
+<p><strong>You can resume your application at the following secure link:</strong><br/>
+<a href="https://apply.opencon2018.org{% url 'application:access_draft' uuid %}">https://apply.opencon2018.org{% url 'application:access_draft' uuid %}</a></p>
+
+<p><em>Please keep this link private. If you have trouble clicking the link, try copying and pasting it into your browser.</em></p>
+
+<p>Please remember to submit your application before the relevant deadline of your sponsored scholarship. Drafts not submitted by the deadline will be considered final.</p>
+
+<p>Thanks again for your interest, and we look forward to receiving your completed application soon.</p>
+
+<p>Sincerely,</p>
+
+<p>The OpenCon 2018 Organizing Committee<br/>
+<a href="http://www.opencon2018.org/about_organizingcommittee">http://www.opencon2018.org/about_organizingcommittee</a></p>
+<br>
+<hr>
+<p>Please do not reply to this email. You can get answers to questions and find out how to contact us at our FAQ page <a href="http://www.opencon2018.org/faq">http://www.opencon2018.org/faq</a></p>
+
+{% comment %}
+
+- #todo -- remove hardcoded URL -- but be careful:
+- {% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:access_draft' uuid %} -- wrongly returns http:///saved/{some-uuid}/
+- #todo -- #annualcheck -- replace opencon2018.org URL
+
+{% endcomment %}

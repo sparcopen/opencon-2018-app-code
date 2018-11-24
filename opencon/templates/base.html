@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}OpenCon2018 Application Form{% endblock %}</title>
+    <meta property="og:image" content="{% static 'img/opencon2018-apply.png' %}">
+    <meta property="og:title" content="Apply Now for OpenCon2018">
+    <meta property="og:description" content="OpenCon 2018 will take place in Toronto, Canada. It will bring together students and early career academic professionals from around the world who want to advance Open Access, Open Education, and Open Data. Apply now to attend and request a travel scholarship.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">{# href="{% static 'css/bootstrap-3.3.6.min.css' %}" #}{# temporarily load bootstrap from CDN to avoid issues with whitenoise package (missing glyphs) #}
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/png" />
+
+    <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-3.3.6.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <style>
+        {# 2017-06-19`11:29:48 -- fix css issue in the application form: broken radio buttons under "application type" and checkboxes under "events" #}
+        {# fix for Django 1.10 #}
+        .form-group ul li label input[type="radio"], .form-group ul li label input[type="checkbox"] { display: inline-block; width: auto; height: auto; }
+
+        {% comment %}
+        {# fix for Django 1.11 -- needs testing #}
+        {# FYI: untested because Django 1.11 was not rendering labels correctly for these fields #}
+        .form-group ul li input[type="radio"], .form-group ul li input[type="checkbox"] { display: inline-block; width: auto; height: auto; }
+        {% endcomment %}
+
+        .form-group li label { font-weight: normal; }
+        .form-list li { list-style-type: circle; }
+
+        {# 2017-07-05`13:28:26 -- fix CSS at the filter page #}
+        .form-filteritem ul                                 {display: block;}
+        .form-filteritem ul li                              {display: block;}
+        .form-filteritem ul li label                        {display: inline-block; font-weight: normal; width: auto; }
+        .form-filteritem ul li label input[type="checkbox"] {display: inline-block; width: auto; margin-right: 10px; }
+
+        {# 2017-07-06`06:57:05 -- fix visual layout R1 rating + R2 rating instructions #}
+
+        .form-list li { list-style-type: disc; }
+
+        {# 2017-06-20`09:07:21 -- make errors more visible #}
+        {# list of errors at the top #}
+        .alert-error { background-color: #eeeeee; }
+        .alert-error a { color: #F14B31; }
+        {# individual error messages next to the fields #}
+        .errorlist { background-color: #eeeeee; color: #F14B31; } {# make error messages more visible #}
+
+        a { color: #1d9bba; }
+        a:hover { color: #F14B31; text-decoration: none; }
+        a:focus { color: #F14B31; text-decoration: none; }
+        .btn-primary { background-color: #0E4957; border: solid #0E4957; color: #ffffff; }
+        .btn-primary:hover { background-color: #F14B31; border: solid #F14B31; }
+        .btn-primary:focus {background-color: #0E4957; border: solid #0E4957; color: #ffffff; outline-width: 0px;}
+        .btn-primary:active {background-color: #0E4957; border: solid #0E4957; color: #ffffff; outline-width: 0px;} 
+        .btn-primary:active:hover {background-color: #0E4957; border: solid #0E4957; color: #ffffff; outline-width: 0px;} 
+        .btn-primary:active:focus {background-color: #0E4957; border: solid #0E4957; color: #ffffff; outline-width: 0px;}
+        .btn-primary a { color: #ffffff; text-decoration: none; }
+        .btn-popup { background-color: #0E4957; border: solid #0E4957; border-radius: 4px; color: #ffffff; outline-width: 0px; }
+        .btn-popup:hover { background-color: #F14B31; border: solid #F14B31; }
+        .btn-popup a { color: #ffffff; text-decoration: none; }
+        .btn-rate { color: #ffffff;  font-weight: regular; border-radius: .3em; padding: .4em; border: 2px solid; margin-left: 5px; margin-right: 5px; outline-width: 0px;}
+        .btn-rate:hover { border-color: #f6ac2c; background-color: #f6ac2c; }
+        .btn-yes { border-color: #1d9bba; background-color: #1d9bba; height: 4em; width: 6em; font-size: 175% }
+        .btn-no { border-color: #F14B31; background-color: #F14B31; height: 4em; width: 6em; font-size: 175% }
+        .btn-ratenow { border-color: #0e4957; background-color: #0e4957; width: 8em; font-size: 120% }
+        .btn-skipnow { border-color: #94A3A8; background-color: #94A3A8; width: 4em; margin-left: 1px; font-size: 120%}
+        .btn-skip { background-color: #94A3A8; border: solid #94A3A8; color: #ffffff; width: 5em; }
+        .btn-skip:hover { background-color: #F14B31; border: solid #F14B31; color: #ffffff; }
+
+        .popup-title { padding-top: 10px }
+        .page-title { padding-top: 10px; padding-bottom: 20px; }
+        .rate-title {margin-bottom: 15px; margin-top: 20px;}
+        .logo { padding-top: 40px; padding-bottom: 15px; margin-left: -5%; width: 85%  }
+        .hr-bottom { margin-top: 0px;} 
+
+        .org-box { border: 7px solid #0E4957; border-radius: 15px; padding: 30px; width: 94%; margin: auto; margin-top: 25px; margin-bottom: 30px;}
+        .org-title { color: #1f222; padding-top: 20px; padding-bottom: 15px }
+        .org-logo { text-align: center;}
+
+        .multiple-checkbox label { font-weight: normal ; padding-left: 5px; }
+        .multiple-checkbox input { margin-left: -17px; }
+
+        .nav-pills > li > a { border-radius: 0px ; color: #ffffff; width: 8em; padding: .6em; text-align: center; }
+        .nav-r0 { background-color: #F14B31; }
+        .nav-r1 { background-color: #0e4957; }
+        .nav-r2 { background-color: #1d9bba; }
+        .nav-item { margin-bottom: 2px; margin-left: 2px; }
+
+        .filter-detail { padding: 5px; width: 90%; margin-bottom: 10px; }
+
+        .form-control { height: unset; } {# 2017-07-01`11:45:25 -- without this, styles in Django 1.11 compute "height: 34px" and the application form looks terrible (it worked OK in Django 1.10) #}
+
+        ul.form-control { border: none; box-shadow: none; color: #333; } {# 2017-07-01`11:55:37 -- in Django 1.10 there were no borders around certain form controls displayed, remove them in Django 1.11 as well... #}
+
+        .form-group textarea { width:75%; height: 10em; margin-top: 6px;}
+        .form-group select { width:75%; margin-top: 6px;}
+        .form-group input[type=text],[type=number],[type=email],[type=url] { width:75%; margin-top: 6px; }
+        .form-group label input[type="checkbox"] {  margin-left: -17px; }
+
+        {# other customizations #}
+        .no-js #loader { display: none;  }
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(/static/img/spiffy.gif) center no-repeat #fff;
+        }
+        ul{
+            padding-left: 20px;
+        }
+        ul li{
+            list-style-type: none;
+        }
+        .form-group{
+            margin-bottom: 45px;
+        }
+        .overlap{
+            top: 120px;
+            padding: 30px;
+            position:absolute;
+            background-color: rgba(31, 118, 147, 0.4);
+            left: -5%;
+            width: 110%;
+            height: 98.8%;
+            z-index: 10;
+        }
+        #check_mail{
+            position: absolute;
+            top: 2px;
+            right: -20px;
+        }
+        @media screen and (min-width: 992px){
+            .overflow{
+                overflow-y: scroll;
+                height: 78vh;
+            }
+        }
+        .table_highlight_green{
+            background: #bdecf5;
+        }
+        .table_highlight_red{
+            background: #f2f2f2;
+        }
+        .table-legend {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+            margin: 5px;
+            border-radius: 3px;
+            width: 50%
+        }
+
+
+        {# 2017-07-03`20:03:31 -- expand/collapse region -- CSS copied from Connect OER #}
+        summary {background: #fcfcfc; border-radius: 5px; cursor: pointer; margin: -1%; padding: 8px 0; position: relative; font-weight: bold; overflow: hidden; }
+        summary:hover, details[open] summary {background: #f6f6f6;}
+        summary::-webkit-details-marker {display: none}
+        summary:before{border-radius: 5px; content: "+"; color: #363636; display: block; float: left; font-size: 1.2em; font-weight: bold; margin: -2px 10px 0 10px; padding: 0; text-align: center; width: 20px;}
+        summary:after{content: "(click/tap to expand)"; color: #dddddd; display: block; float: right; margin-right: 20px; }
+        details[open] summary:before {content: "-"; margin-top: -4px;}
+        details[open] summary {margin-bottom: 20px;}
+    </style>
+    <!-- Google Analytics -->
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-61115389-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+</head>
+<body>
+    {% block body_start %} {% endblock %}
+    {% block menu %} {% endblock %}
+    <div class="container">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+
+    {% block footer %}
+
+    {% endblock %}
+</body>
+</html>

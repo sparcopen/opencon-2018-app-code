@@ -1,0 +1,14 @@
+{% extends 'application/base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+        {% include 'application/header.html' %}
+        <h1 class="page-title">Sorry, that didn't work!</h3>
+        <p>We are unable to send your access link right now, most likely because you already submitted a request within the last few minutes. Please wait at least 10 minutes before trying again.</p> 
+        <p>If this problem persists, you may <a href="http://www.opencon2018.org/faq#question">contact us</a>. Thanks for your patience!</p>
+        <br>
+        {% include 'application/footer.html' %}
+    </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+version: '2'
+
+services:
+  postgres:
+    build: ./compose/postgres
+    volumes:
+      - /srv/docker/opencon2018/postgres_data:/var/lib/postgresql/data
+      - /srv/docker/opencon2018/postgres_backup:/backups
+    env_file: ./.env
+    environment:
+      # consider moving POSTGRES_USER to .env (same for dev & production)
+      - POSTGRES_USER=opencon2018
+
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile
+    command: /gunicorn.sh
+    depends_on:
+      - postgres
+      - redis
+    env_file: ./.env
+    environment:
+      # consider moving POSTGRES_USER to .env (same for dev & production)
+      - POSTGRES_USER=opencon2018
+      - DJANGO_SETTINGS_MODULE=config.settings.production
+    user: django
+    # ports are exposed, traffic is handled by external nginx
+    # IMPORTANT: run ssllabs test, some headers may be sent twice
+    # (adjust in production.py as appropriate)
+    ports:
+      - "9121:5000"
+
+  # nginx:
+  #   build: ./compose/nginx
+  #   depends_on:
+  #     - django
+  #
+  #     - certbot
+  #
+  #   ports:
+  #     - "0.0.0.0:80:80"
+  #
+  #   environment:
+  #     - MY_DOMAIN_NAME=example.com
+  #   ports:
+  #     - "0.0.0.0:80:80"
+  #     - "0.0.0.0:443:443"
+  #   volumes:
+  #     - /etc/letsencrypt:/etc/letsencrypt
+  #     - /var/lib/letsencrypt:/var/lib/letsencrypt
+  #
+  # certbot:
+  #   image: quay.io/letsencrypt/letsencrypt
+  #   command: bash -c "sleep 6 && certbot certonly -n --standalone -d example.com --text --agree-tos --email gondol@gondol.sk --server https://acme-v01.api.letsencrypt.org/directory --rsa-key-size 4096 --verbose --keep-until-expiring --standalone-supported-challenges http-01"
+  #   entrypoint: ""
+  #   volumes:
+  #     - /etc/letsencrypt:/etc/letsencrypt
+  #     - /var/lib/letsencrypt:/var/lib/letsencrypt
+  #   ports:
+  #     - "80"
+  #     - "443"
+  #   environment:
+  #     - TERM=xterm
+
+  redis:
+    image: redis:latest

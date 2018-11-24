@@ -1,0 +1,39 @@
+{% extends "rating/base.html" %}
+
+{% load opencon %}
+
+{% block content %}
+    {% if object_list %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Citizenship</th>
+                <th>Affiliation</th>
+                <th>Interest</th>
+                <th>Need rating (R1)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+            {% i_rated user.rated1.all object as i_rated_bool %}
+            <tr class="{% if i_rated_bool %}table_highlight_green{% elif not object.need_rating1 %}table_highlight_red{% endif %}">
+                <td>{{ forloop.counter }}</td>
+                <td>{% if i_rated_bool %}{{ object.full_name }}{%else%}<a href="{% url 'rating:rate_round1_by_application' object.pk %}">{{ object.full_name }}</a>{%endif%}</td>
+                <td>{{ object.citizenship_expanded }}</td>
+                <td>{{ object.affiliation_1 }}</td>
+                <td>{{ object.area_of_interest_expanded }}</td>
+                <td>{{ object.need_rating1 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <h4 style="padding-top: 20px; padding-bottom: 10px; padding-left: 5px;">Legend</h4>
+        <p class="table-legend">Applications That Need Rating</p>
+        <p class="table_highlight_green table-legend">Applications You Have Already Rated</p>
+        <p class="table_highlight_red table-legend">Applications That Don't Need Rating</p>
+    {% else %}
+        <h1>There are no Round 1 applications to rate yet. Please come back later.</h1>
+    {% endif %}
+{% endblock %}

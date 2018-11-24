@@ -1,0 +1,532 @@
+A World At School
+AEGEE (European Students' Forum)
+Africa Library and Information Association
+African Literature Association
+African National Congress Youth League (ANCYL)
+African Nutrition Society
+African Prisons Project
+African Student Union
+African Students Association in Turkey
+AIESEC (International Association of Students in Economic and Commercial Sciences)
+Alliance of Digital Humanities Organizations
+Alpha Chi
+Alpha Kappa Psi
+Alpha Phi Omega
+American Academy of Emergency Medicine
+American Association for Public Opinion Research
+American Association for the Advancement of Science
+American Association of Immunologists
+American Bar Association
+American Chamber of Commerce Philippines
+American College and Research Libraries
+American Councils for International Education
+American Educational Research Association (AERA)
+American Geophysical Union
+American Library Association (ALA)
+American Library Association, Florida State University Student Chapter
+American Medical Informatics Association (AMIA)
+American Medical Student Association (AMSA)
+American Meteorological Society
+American Musicological Society
+American Physical Society
+American Planning Association
+American Political Science Association
+American Society for Cell Biology
+American Society for Microbiology
+American Society for Nutrition
+American Society of Ichthyologists and Herpetologists
+American Society of Mechanical Engineers
+American Society of Radiologic Technologists
+American Sociological Association
+American University Washington College of Law Student Bar Association
+Amnesty International
+Anthropological Association of the Philippines (UGAT)
+Anti Corruption International
+Arab Innovation Network
+Arab League Educational Cultural and Scientific Organization (ALECSO)
+Arab Organization for Education
+Arab Women in Computer Sciences
+Arab World Association of Young Scientists
+Arizona State University Graduate and Professional Students Association
+Arts Council of Mongolia
+Asia Pacific Alliance of Postgraduate Student Associations
+Asociación Española de Comunicación Científica (AECC)
+Asociación Profesional de Especialistas en Información
+Associate Member American Society of Civil Engineers
+Associação Nacional de Estudantes de Psicologia (Portuguese National Association of Psychology Students)
+Associated Students of Lane Community College
+Associated Students of the University of Arizona
+Association des Etats Généraux des Etudiants de l’Europe (European Students’ Forum)
+Association for Computers and the Humanities
+Association for Computing Machinery (ACM)
+Association for Health & Information Libraries in Africa (AHILA)
+Association for Information Science and Technology (ASIS&T)
+Association for Pathology Informatics (API)
+Association for Public Policy and Analysis Management (APPAM)
+Association for Supervision and Curriculum Development (ASCD)
+Association for the Advancement of Sustainability in Higher Education (AASHE)
+Association for the Study of Higher Education (ASHE)
+Association Internationale des Etudiants en Sciences Economiques et Commerciales (AIESEC)
+Association of American Geographers (AAG)
+Association of Caribbean University, Research and Institutional Libraries (ACURIL)
+Association of Community Radio Broadcasters (ACORAB)
+Association of Information Systems
+Association of Internet Researchers
+Association of Library and Information Science Students
+Association of Marine Engineering Students
+Association of Medical Students in Bulgaria
+Association of Nigerian Geographers (ANG)
+Association of Research Libraries (ARL)
+Association of Southeast Asian Nations
+Associations for the Sciences of Limnology and Oceanography
+Athabasca University Graduate Students' Association
+Australian Digital Alliance
+Australian Human Resources Institute (AHRI)
+Australian Injury Prevention Network
+Australian Library and Information Association (ALIA)
+Australian Medical Students' Association
+Austrian Medical Students' Association
+Austrian Students Union (ÖH)
+Azerbaijan Student Youth Organizations Union
+Bahamas National Youth Council
+Bangladesh Agricultural Research Council
+Bangladesh Association of Librarians
+Bashkir Academy of Public Administration and Management
+Berkman Center
+Beta Beta Beta
+Beta Kappa Kappa
+Beta Phi Mu
+Black Doctoral Network
+Botswana Law Society
+Brazilian Association of Medical Education
+Brazilian Computer Society (SBC)
+British Columbia Library Association
+British Medical Association's Medical Students Committee
+British Neuroscience Association
+Bundesvertretung der Medizinstudierenden in Deutschland (BVMD) (German Medical Students' Association)
+California Institute of Technology Graduate Student Council
+Cameroon Association of Librarians
+Cameroon English Language and Literature Association (CELLA)
+Cameroon English Language and Literature Teachers' Association (CAMELTA)
+Cameroon Women Scholarship Alumni Association
+Canadian Alliance of Student Associations
+Canadian Association for Information Science
+Canadian Association of Learned Journals
+Canadian Association of Research Libraries
+Canadian Federation of Medical Students
+Canadian Federation of Students
+Canadian Society for the Study of Education
+CARAVAN
+Catholic Youth of Botswana
+Center for Peace and Governance
+Center for Policy Analysis
+Center for The Study of Bioethics
+Centre for Internet and Society
+Centrum Cyfrowe
+Chemical Society of Nigeria
+Christian Association of Nigeria Students
+Christian Medical and Dental Association
+Citizen Science Association
+Code for Hawaii
+Code for Seoul
+Code4Lib
+Columbia University Graduate Student Advisory Council
+COMEXI
+Commonwealth of Learning
+Commonwealth Students Association
+Commonwealth Youth Gender and Equality Network
+Commonwealth Youth Network
+Community Development Society (CDS)
+Comparative and International Education Society
+Computer Professionals of Nigeria (CPN)
+Computer Society of India
+Cornell University Graduate and Professional Student Assembly
+Creative Commons
+Creative Commons Aotearoa
+Creative Commons Australia
+Creative Commons Colombia
+Creative Commons Germany
+Creative Commons Guatemala
+Creative Commons Japan
+Creative Commons Korea
+Creative Commons Mexico
+Creative Commons Poland
+Creative Commons South Africa
+Creative Commons United States
+Croatian Pharmacy and Medical Biochemistry Students' Association
+Dartmouth College Graduate Student Council
+DataMeet.org
+Delta Epsilon Iota
+Delta Xi Nu
+Digital Library Federation (DLF)
+Direção Executiva Nacional dos Estudantes de Medicina (Brazil)
+Django Girls
+EDUCAUSE
+Educomunicação e Ciência Aberta
+EIFL (Electronic Information for Libraries)
+Electronic Frontier Foundation (EFF)
+ENACTUS 
+Entrepreneurship Initiative for African Youth (EIFAY)
+Erasmus Student Network
+Ethiopian Free and Open Source Network (EFOSSNet)
+Ethiopian Information Technology Professionals Association (EITPA)
+Ethiopian Medical Students Association
+Eurodoc (European Council of Doctoral Candidates and Junior Researchers)
+European Federation of Internal Medicine
+European Federation of Psychology Students' Associations (EFPSA)
+European Geosciences Union
+European Law Students' Association
+European Mathematical Society
+European Medical Students' Association
+European Medical Students' Association - Turkey
+European Medical Students' Association (EMSA)
+European Network for Social Intelligence
+European Pharmaceutical Students' Association
+European Scientific Institute
+European Social Fund
+European Society for Endocrinology
+European Students of Industrial Engineering and Management
+European Youth Parliament
+Family and Consumer Sciences' Students Association (FACSSA)
+Fédération des associations étudiantes du campus de l'Université de Montréal
+Federation of African Medical Students' Associations
+Federation of African Medical Students' Associations (FAMSA)
+Federation of Medical Students Associations in Romania
+Federation of Uganda Medical Students' Association (FUMSA)
+FEMNET
+FHI 360
+Finnish Medical Students' International Committee
+Finnish Psychology Students´ Association
+Florida State Congress of Graduate Students
+Forum for the Development of Young People
+Free and Open Source Software Foundation for Africa
+Free Software Foundation (FSF)
+Free Software Foundation of Europe (FSFE)
+Freedom of Expression Institute (FXI)
+Freedom of Information Lawyers Network
+Fulbright Scholar Program
+Future Leaders of the Philippines
+Future Youth Association
+Garoa Hacker Clube
+Generations For Peace
+Geological Society of America (GSA)
+Geoscience Information Society (GSIS)
+Ghana Library Association
+Girl Scouts of America
+Global Changemakers
+Global Institute for Family Integrity
+Global Model United Nations
+Global OER Graduate Network (GO-GN)
+Global Primate Network
+Global Public Policy Watch
+Global Shapers
+Global South Development Magazine
+Global Tech Women
+Global Voices
+Global Youth Ambassador
+Global Youth Innovation Network
+Golden Key International Honor Society
+Google Developer Group (GDG)
+Google Student Ambassador (GSA) Program
+Grand Valley State University Student Senate
+Gruene Jugend
+Harvard Extension Pre-Health Society
+Hawaii Library Association
+Hawaii Museums Association
+Heinrich Böll Foundation
+Hellenic Medical Students' International Committee (HelMSIC)
+HelsiCore
+Hillel
+Himalayan Scholar Group for Nature Conservation
+Human Rights Commission of Pakistan
+Human Sciences Research Council
+Hungarian Genetics Society
+IASSIST (International Association for Social Science Information Services and Technology)
+IATDMCT (International Association of Therapeutic Drug Monitoring and Clinical Toxicology)
+ICT4D
+IFMSA - Jordan
+IFMSA - Netherlands
+IFMSA - Pakistan
+IFMSA - Québec
+IFMSA - Spain
+IFMSA (International Federation of Medical Students' Associations)
+Indian Association of Teacher Educators
+Indian Medical Association
+Indian Medical Student Association
+Indonesian Center for Agricultural Library and Technology Dissemination (ICALTD)
+Institute for Electrical and Electronics Engineers (IEEE)
+International Agency for Community Development (IACD)
+International Association for Political Science Students
+International Association of Dental Students
+International Association of Student Surgical Societies (IASSS)
+International Association of Students in Agricultural and Related Sciences
+International Board on Books for Young People (IBBY)
+International Debate Education Association
+International Digital Publishing Forum
+International Federation of Library Associations and Institutions (IFLA)
+International Federation of Medical Students' Associations (IFMSA)
+International Law Students Association
+International Movement of Catholic Students
+International Networks of Innovators in Education
+International Pharmaceutical Students Federation (IPSF)
+International Physicians for the Prevention of Nuclear War (IPPNW)
+International Public Relations Association
+International Research & Exchanges Board (IREX)
+International Society for Human Rights
+International Society for Political Psychology
+International Students of History Association
+International Veterinary Students Association
+International Youth Alliance for Family Planning
+International Youth Council (IYC)
+International Youth Foundation
+Internet Society
+Internet Society: Gauteng (ISOC)
+IP Law Society (UChicago Law)
+Jisc
+Journal of Young Investigators
+Junior Chamber International (JCI)
+Junior Public Health Association of South Africa (JuPHASA)
+Kappa Omicron Nu
+Kenya Library Association
+Law Students Association of Sri Lanka
+Lebanese Medical Students' International Committee
+Library Association of Bangladesh (LAB)
+Library Publishing Coalition
+Linguistics Society of America
+Lions Club
+Lithuanian Society of Young Researchers
+Macedonian Medical Students' Association
+Malaria Society of Nigeria
+Malawi Library Association
+Malta Medical Students' Association
+Massachusetts Institute of Technology Graduate Student Council
+Massachusetts Institute of Technology Undergraduate Association
+Max Planck PhDnet
+Max Planck Society
+Medical Library Association
+Medical Society of Polish Doctors
+Medical Students Against AIDS
+Medical Students Association of Kenya
+Medical Students' Association of Rwanda (MEDSAR)
+Medical Students’ Association of Kenya
+Medsin-UK
+Microsoft Student Program
+MindShift Foundation
+Model United Nations
+Mozilla Foundation
+Mozilla Slovenia
+Music Encoding Initiative
+MyScienceWork
+National Association of Black Graduate Students
+National Association of Computer Science Students
+National Association of Graduate-Professional Students (NAGPS)
+National Association of History and International Studies Students
+National Association of Library and Information Science Students
+National Association Of Physics Students
+National Association of Special Education Students
+National Black MBA Association (NBMBAA)
+National Graduate Caucus of the Canadian Federation of Students
+National Honor Society
+National Recreation and Park Association
+National Society of Leadership and Success
+National Youth Development Council
+National Youth Development Initiatives
+National Youth Network on Climate Change
+National Youth Services Council of Sri Lanka
+Nepal Bar Association
+Nepal Medical Student Society
+Nerdologia
+Netsquared
+New Media Rights
+Nigeria Open Data Access
+Nigerian Association of Agricultural Students
+Nigerian Bar Association
+Nigerian Institute of Physics
+Nigerian Journal of Pure and Applied Physics 
+Nigerian Library Association
+Nigerian Medical Association (NMA)
+Nigerian Medical Students Association (NiMSA)
+Nigerian Medical Students' Association
+Nigerian Students Leadership Forum
+NorthEast Regional Computing Program (NERCOMP)
+Norwegian Students' and Academics' International Assistance Fund
+Oberlin College Student Senate
+OCSDNet
+Oklahoma State University Graduate and Professional Student Government Association
+Old Dominion University Graduate Student Organization
+Ontario Library Association
+OOO Canada Research Network
+Open Access Nepal
+Open Access Nigeria
+Open Access Scholarly Publishing Association (OASPA)
+Open Access South Africa
+Open and Collaborative Science for Development Network
+Open Knowledge
+Open Knowledge Belgium
+Open Knowledge Nepal
+Open Knowledge Taiwan
+Open Knowledge Brazil
+Open Learning Exchange
+Open MENA
+Open Policy Network
+Open Science Foundation
+opendata.ch
+openSNP
+Organization of the American States
+oSTEM
+Oxfam
+Pacific Northwest Library Association
+Pan African Youth Leaders Network
+Pan African Youth Union (PYU)
+Parliamentary Network on the World Bank and the International Monetary Fund
+Pavlovian Society
+Peace Ambassadors the Gambia
+Peace Revolution Network
+Phi Alpha Theta
+Phi Beta Kappa
+Phi Beta Lambda
+Phi Kappa Phi
+Phi Sigma
+Phi Theta Kappa
+Philly Digital Humanities
+Pi Alpha Alpha
+Pi Sigma Alpha
+Pirate Party Brazil
+Pirate Party France
+Planned Parenthood Federation of America
+Positive Peace Group
+Prime Initiative for Green Development (PIGD)
+Professional Association of Information and Documentation Sciences (PRAIDS)
+Progressive Alliance
+Progressive Youth Ministry
+Projet SOHA
+Psi Chi
+Psychological Society of Ireland (PSI)
+Public Knowledge
+Public Knowledge Project (PKP)
+Public Relations Society of Kenya
+Radio Free Europe
+Reach Young People Uganda
+Red Crescent Society of Kyrgyzstan
+Red Cross
+Reevo
+Reference & User Services Association
+Regional Center for Renewable Energy and Energy Efficiency (RCREEE)
+Renaissance Society of America
+Research Data Alliance
+ResearchGate
+Resource Center For Environment and Sustainable Development
+Resources and Environmental Economics Student Association (REESA)
+Right to Research Coalition (R2RC)
+Right2Know Campaign (R2K)
+Rise Networks
+ROSEdu
+Rotary Club
+Rotary Club ROTARACT
+Royal Commonwealth Society
+Russian Union of Young Scientists
+Russian Young Doctors League
+Rwanda Medical and Dental Council
+Rwanda Pharmaceutical Students Association (RPSA)
+School of Data
+ScienceBlogs Brazil
+ScienceOpen
+Segretariato Italiano Studenti in Medicina
+Sigma Alpha Epsilon
+Sigma Beta Delta
+Simmons College Library and Information Science Student Association
+smallworldproject.ch
+Social Welfare Society
+Society Bridge to the Future
+Society for American Archaeology
+Society for Neuroscience
+Society for Philosophy and Technology
+Society for Research in Child Development (SRCD)
+Society for the Study of Evolution
+Society of American Archivists
+Society of Exploration Geophysicists
+South African Association for Hospital and Institutional Pharmacists (SAAHIP)
+South African Sociology Association
+South Asian Youth Society (SAYS)
+South East Asia Student Organization (SEASON)
+Southwestern Association of Law Libraries
+SPARC
+Special Libraries Association
+St. Olaf College Student Government Association
+Student Advocates for Graduate Education
+Student Net Alliance
+Student Open Access Research
+Student Public Interest Research Groups (Student PIRGs)
+Students AID Liberia
+Students Association For Legal Aid and Research
+Students for Free Culture
+Students Scientific Association of Information Science
+Tanzania Medical Student Association (TAMSA)
+Tanzania Youth Alliance
+Tatarstan Medical Students' Association
+Texas Library Association
+The Generation Green (TGG)
+Trinity University Association of Student Representatives
+Tufts Graduate Student Council
+Tufts University Friedman School of Nutrition Science and Policy Student Council
+U.S. Student Association (USSA)
+Ubiquity Press
+Udruga Studenata Dentalne Medicine (Croatia)
+UNESCO
+Union of Concerned Scientists
+United Nations Correspondents Association (UNCA)
+United Nations Major Group of Children and Youth
+United Nations Non-Governmental Liaison Service (UN-NGLS)
+United Nations Population Fund (UNFPA)
+United Nations Volunteers (UNV)
+United Nations Youth and Student Association of Nepal (UNYSAN)
+United Nations Youth Association
+United States Student Association
+Universities Allied for Essential Medicines
+University of Arizona Graduate and Professional Student Council
+University of Calgary Students' Academic Assembly
+University of California Student Association
+University of California, San Diego Graduate Student Association
+University of Colorado Student Government
+University of Colorado United Government of Graduate Students
+University of Hawaii Library and Information Science ASIS&T Student Chapter
+University of Minnesota Graduate and Professional Student Assembly
+University of Missouri Graduate Professional Council
+University of Nebraska - Lincoln Graduate Student Association
+University of Tennessee - Knoxville Student Government Association
+USAID
+Utah Library Association
+Value for Tomorrow Initiative
+Volunteer Services Overseas (VSO)
+Washington Library Association
+Wikimedia Bangladesh
+Wikimedia Belgium
+Wikimedia Deutschland
+Wikimedia Egypt
+Wikimedia Foundation
+Wikimedia Ghana
+Wikimedia Hong Kong
+Wikimedia India
+Wikimedia Mexico
+Women Deliver
+Women Enhancing Technology
+World Council of Churches
+World Health Organization (WHO)
+World March of Women
+World Peace Initiative Foundation
+World Youth Alliance
+Young African Ambassadors in Asia
+Young Arab Voices
+Young Librarians Association
+Young Scientists Council of Ukraine (RMU)
+Young Women's Knowledge and Leadership Institute
+Youth Educators Sharing Network (Youth ESN)
+Youth Environmental Alliance for Sustainable Development
+Youth for Enlightenment and Welfare (YEW)
+Youth Interaction
+Youth Network for Reform
+Youth South East Asia Leader Initiative
+Youth Vision Alliance Network
+Youthful Cities
+Youths For Youths Network
+Zimbabwe Library Association

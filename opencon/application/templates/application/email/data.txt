@@ -1,0 +1,42 @@
+<p>Dear {% if nickname %}{{ nickname }}{% else %}{{ first_name }}{% endif %},</p>
+
+<p>Thank you for applying to OpenCon 2018. Your application has been received. A copy of the information you submitted is attached for your records.</p>
+
+<p>Application decisions for the general application process will be delivered by email by August 31. If you applied for a sponsored scholarship, please check with the sponsor about when you can expect a decision. You can check the current status of your application at the following link: <a href="https://apply.opencon2018.org/check_status/?username={{ my_referral }}&token={{ timestamp | date:"U" }}">https://apply.opencon2018.org/check_status/?username={{ my_referral }}&token={{ timestamp | date:"U" }}</a></p>
+
+<p>OpenCon is more than a conference. It’s a community supported through active forums, programs and online and in-person events throughout the year that are open to everyone – and we encourage you to get involved right away. Below are some ideas to get started.</p>
+
+<p><strong>Top 4 Ways to Get Involved with OpenCon</strong></p>
+
+<p><strong>(1) RSVP to attend OpenCon Live.</strong> Even if you are not invited to attend in person, you can still participate remotely in OpenCon 2018 through our online program, OpenCon Live. Let us know that you plan to participate in OpenCon 2018 either way by submitting your RSVP: <a href="http://www.opencon2018.org/opencon_2018_live">http://www.opencon2018.org/opencon_2018_live</a></p>
+
+<p><strong>(2) Host or attend an OpenCon Satellite Event.</strong> You can help build the Open Access, Open Education, and Open Data movements by organizing or attending an OpenCon satellite event. Satellite events are locally organized events that combine content, themes and ideas from the main meeting with locally arranged activities—and can be organized by anyone, anywhere, at any time of the year. In 2016, we had over 2000 people participate in satellite events across twenty different countries! Attend an event in your region: <a href="http://www.opencon2018.org/attend">http://www.opencon2018.org/attend</a> Don’t see an event close to you on our map? Sign up to host here: <a href="http://www.opencon2018.org/satellite">http://www.opencon2018.org/satellite</a>
+</p>
+
+<p><strong>(3) Join the OpenCon Community.</strong> OpenCon brings together students, early career researchers and more from across the world for discussion and action around Open Access, Open Data and Open Education. Connect with the global OpenCon community through our Community Calls and at <a href="https://twitter.com/search?q=%23opencon&src=typd">#OpenCon</a>. More information here: <a href="http://www.opencon2018.org/community">http://www.opencon2018.org/community</a></p>
+
+<p><strong>(4) Share your reasons for applying to OpenCon online.</strong> In the spirit of openness, we encourage everyone who applies to share why Open is important to you, and how you would use your experience at OpenCon to have an impact. You can use your answers to the short answer questions in your application as a starting point. Send your blog post or other related links to us on Facebook, Twitter or at <a href="http://www.opencon2018.org">http://www.opencon2018.org</a>
+</p>
+
+<p>We look forward to staying in touch, and we hope to see you get involved in one or more of these activities!</p>
+
+<p>Sincerely,</p>
+
+<p>The OpenCon 2018 Organizing Committee<br/>
+<a href="http://www.opencon2018.org/about_organizingcommittee">http://www.opencon2018.org/about_organizingcommittee</a></p>
+
+<p>Please do not reply to this email. You can get answers to questions and find out how to contact us at our FAQ page <a href="http://www.opencon2018.org/faq">http://www.opencon2018.org/faq</a></p>
+
+<hr/>
+
+<div style="color: #4a7381; font-family: monospace;">
+<p><strong>Application Data</strong></p>
+<p>Below is the application data you submitted. Please note that some of the questions may appear out of order, and some of the answers may be abbreviated because of how our database stores the information. That is normal, so don't worry. If you notice a significant error in the information you provided, you may <a href="http://www.opencon2018.org/faq#contact">contact us</a>.</p>
+
+<ul>
+{% for field in object.get_data %}
+    <li><em>{{ field.title }}</em><br/>
+    {{ field.content }}</li>
+{% endfor %}
+<ul>
+</div>

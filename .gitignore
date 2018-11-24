@@ -1,0 +1,15 @@
+# Basics
+*.py[cod]
+__pycache__
+
+# Pycharm
+.idea/*
+
+# virtual environments
+.env
+
+# exclude databases
+*.sqlite3
+
+# exclude django log
+mysite.log

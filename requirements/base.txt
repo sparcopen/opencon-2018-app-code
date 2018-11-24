@@ -1,0 +1,27 @@
+Django==1.10.7
+# 2017-07-01`18:45:04 -- Django 1.11.2 was causing problems (because of new widget rendering), therefore keeping 1.10.X
+django-autocomplete-light==3.2.9
+# git+git://github.com/tzangms/django-bootstrap-form.git@5fff56f715bd9f2f29793f6a5a87baa1be25e409 # "git+git" may be blocked by firewalls
+# https://web.archive.org/web/20170704141353/https://codeload.github.com/tzangms/django-bootstrap-form/zip/5fff56f715bd9f2f29793f6a5a87baa1be25e409
+https://codeload.github.com/tzangms/django-bootstrap-form/zip/5fff56f715bd9f2f29793f6a5a87baa1be25e409
+
+# git+git://github.com/ZoltanOnody/django-bootstrap-form.git@4ae507a8ef09da5fe7825d5e74f3dd6d8950550e
+# BEFORE PATCH: https://web.archive.org/web/20161107194502/https://codeload.github.com/ZoltanOnody/django-bootstrap-form/zip/3b685646ac3df755e705f4d0f5989e3900a2b74e
+# AFTER PATCH: https://web.archive.org/web/20161107194554/https://codeload.github.com/ZoltanOnody/django-bootstrap-form/zip/4ae507a8ef09da5fe7825d5e74f3dd6d8950550e
+django-dotenv==1.4.1
+django-select-multiple-field==0.4.2
+Pillow==4.1.1
+pytz==2017.2
+whitenoise==3.3.0
+gunicorn==19.7.1
+psycopg2==2.7.1
+
+# 2017-06-18`12:44:38
+# django-widget-tweaks provides "render_field" in templates
+django-widget-tweaks==1.4.1
+
+# 2017-07-04`15:12:19 -- add #django-filter
+django-filter==1.0.4
+
+# 2017-07-13`19:05:21 -- add #django-import-export
+django-import-export==1.0.1

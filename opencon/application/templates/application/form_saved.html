@@ -1,0 +1,21 @@
+{% extends 'application/base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+        {% include 'application/header.html' %}
+        <h1 class="page-title">Draft Application Saved</h1>
+        <p>Thanks for saving your draft application for OpenCon 2018. This message confirms that the information you've entered so far has been saved. Be sure to return and complete your draft before the relevant deadline for your scholarship. Draft applications will be considered final after the deadline.<p>
+        <h4 style="padding-top: 8px">Accessing Your Draft</h4>
+        <p>We have sent you an email with a secure link where you can access and complete your draft. We also recommend privately bookmarking this link, since you can also use it to check your application status once it's submitted. Just be sure not to share it with anyone else.</p>
+            <p padding-left: 20px><strong>Secure Access Link</strong><br/>
+                <a href="{% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:access_draft' draft.uuid %}">
+                {% if request.is_secure %}https://{% else %}http://{% endif %}{{ request.get_host }}{% url 'application:access_draft' draft.uuid %}
+                </a>
+            </p>
+        <p>We look forward to receiving your completed application soon and seeing you around the OpenCon Community!</p>
+        <br>
+        {% include 'application/footer.html' %}
+    </div>
+{% endblock %}

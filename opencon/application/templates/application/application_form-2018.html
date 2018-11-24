@@ -1,0 +1,419 @@
+{% extends 'application/base.html' %}
+
+{% load static %}
+
+{% load widget_tweaks %}{# django-widget-tweaks provides "render_field" -- needs to be in #requirements.txt + enabled in settings.py #}
+
+{% load bootstrap %}
+
+{% block content %}
+
+    {# #todo -- format this for organizations (sponsors) #}
+    <div class="col-md-8 col-md-offset-2">
+
+        <p class="text-center"><img width="85%" height="85%" class="logo" alt="OpenCon logo" src="{% static 'img/logo-opencon2018-1200x360.png' %}"/></p>
+
+        {% if organization %}
+            {% if organization.name or organization.image or organization.image_url or organization.text %}
+            {# "Use of actual parentheses in the if tag is invalid syntax (...) use nested if tags." #}
+            <div class="org-box">
+                {% if organization.name %}<h1 class="text-center org-title">{{ organization.name }}</h1>{% endif %}
+                {#{% if organization.image %}<p class="org-logo"><img src="/media/{{ organization.image }}" alt=""/></p>{% endif %}#}
+                {% if organization.image_url %}<p class="org-logo"><img src="{{ organization.image_url }}" alt=""/></p>{% endif %}
+                {% if organization.text %}{{ organization.text | safe }}{% endif %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+        <h1 class="text-center page-title">OpenCon 2018 Application Form</h1>
+
+        {% if not form.errors %}
+
+       <p>OpenCon is the conference and community for students and early career professionals interested in advancing Open Access, Open Education and Open Data. <a href="http://opencon2018.org">OpenCon 2018</a> will be held on November 2-4 in Toronto, Canada. Each year, OpenCon brings together a diverse, representative, and engaged group of participants, with travel scholarships available to most participants. For this reason, attendance at OpenCon 2018 is by application only.</p>
+
+        <p>The benefits of applying for OpenCon 2018 extend far beyond attending the Toronto meeting. It’s an opportunity to find collaborators, get connected with scholarships to attend related conferences, and be recognized by the community for the work you do to promote Open Access, Open Education and Open Data. To find out more about OpenCon and our issue areas before applying, <a href="http://www.opencon2018.org/resources" target="_blank">click here</a>.</p>
+
+        <h3 style="padding-top: 10px;padding-bottom: 5px">Application Instructions</h3>
+
+        <p>Complete the form below to apply for OpenCon 2018. First, enter your email address to unlock the rest of the questions. Once you begin, you can save your progress at any time by clicking “Save for Later” at the bottom of the form. You will then be sent an email with a secure link that you may use to resume your application later. All questions are required unless otherwise noted, and incomplete drafts will be considered final as of the relevant deadline.</p>
+        
+        {% comment %}
+        <a href="https://www.timeanddate.com/worldclock/converter.html?iso=20180714T065900&p1=tz_pdt"><p style="margin-left: 1px; margin-top:8px;margin-bottom:18px;font-size: 120%" class="btn btn-primary">Deadline: Friday July 13 at 11:59pm U.S. Pacific Time (UTC -7)</p></a>
+        {% endcomment %}
+
+        <p>Information you provide through this form is subject to the OpenCon <a href="http://www.opencon2018.org/privacy" target="_blank">Privacy Policy</a>. Questions marked with a caret (^) will be released as de-identified Open Data, and you will have the option to give OpenCon additional permissions at the end of the form. Please visit our <a href="http://www.opencon2018.org/faq" target="_blank">FAQ</a> for further information.</p>
+
+        <p>If you already submitted an application for OpenCon 2018 during our general application period (which ended on July 13) and wish to also have your application considered for a sponsored scholarship, <em>please DO NOT re-submit your application</em>. See further instructions <a href="http://www.opencon2018.org/faq#sponsored">here</a>.</p>
+
+         <p>Thanks, and good luck with your application!</p>
+
+        <hr/>
+
+        {% endif %}
+
+    </div>
+
+    {% if form.errors %}
+    <div class="col-md-8 col-md-offset-2">
+        <p style = "text-align: center; background-color: #F14B31; color: white; padding: 7px; margin-top: 10px; margin-bottom: 10px; border: solid 2px #F14B31; border-radius: 5px;"><strong style="font-size: 200%">Oops, you missed a spot!</strong></p>
+        {% include "list_messages_and_errors.html" %}
+        <script>$(window).ready(function() { remove_overlap(); });</script>
+    </div>
+    {% endif %}
+
+    <div class="col-md-8 col-md-offset-2">
+        <a style="margin-right: 80px ; margin-top: 57px" href="#" id="check_mail" class="btn btn-primary">Start Application</a>
+        <form action="{{ action_url }}" method="post">
+            {% csrf_token %}
+            <div id="overlapping_div"></div>
+
+            {% comment %}
+            {# MAKE SURE that hidden fields are rendered in HTML -- when using "render_field", set "HiddenInput" widget in forms.py -- or simply use "form.FIELDNAME.as_hidden" #}
+            {% render_field form.referred_by class="form-control" %}
+            {% render_field form.attended class="form-control" %}
+            {% render_field form.engagement class="form-control" %}
+            {% endcomment %}
+
+            {{ form.referred_by.as_hidden }}
+            {{ form.attended.as_hidden }}
+            {{ form.engagement.as_hidden }}
+
+            <div class="form-group">{#<strong>1.</strong>#}
+                {{ form.email.label_tag }}<br>
+                <p class="help-block">{{ form.email.help_text }}</p>
+                {% render_field form.email class="form-control" %}
+                {{ form.email.errors }}
+            </div>
+
+<h2>Personal Information</h2>
+
+            <p>First, please tell us some basic information about yourself.</p>
+
+            <br>
+
+            <div class="form-group">
+                {{ form.type.label_tag }}<br>
+                <p class="help-block">{{ form.type.help_text }}</p>
+                {% render_field form.type class="form-control" %}
+                {{ form.type.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.first_name.label_tag }}<br>
+                <p class="help-block">{{ form.first_name.help_text }}</p>
+                {% render_field form.first_name class="form-control" %}
+                {{ form.first_name.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.last_name.label_tag }}<br>
+                <p class="help-block">{{ form.last_name.help_text }}</p>
+                {% render_field form.last_name class="form-control" %}
+                {{ form.last_name.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.nickname.label_tag }}<br>
+                <p class="help-block">{{ form.nickname.help_text }}</p>
+                {% render_field form.nickname class="form-control" %}
+                {{ form.nickname.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.alternate_email.label_tag }}<br>
+                <p class="help-block">{{ form.alternate_email.help_text }}</p>
+                {% render_field form.alternate_email class="form-control" %}
+                {{ form.alternate_email.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.twitter_username.label_tag }}<br>
+                <p class="help-block">{{ form.twitter_username.help_text }}</p>
+                {% render_field form.twitter_username class="form-control" %}
+                {{ form.twitter_username.errors }}
+            </div>
+
+
+            <h2>Interest in OpenCon</h2>
+
+            <p>The following questions are designed to help us get to know you and why you are interested in OpenCon. This is the most important part of your application. Please answer questions in English and pay careful attention to the limits on length. You may wish to use character counting tool like <a href="https://wordcounter.net/character-count">this</a> or <a href="http://www.charactercountonline.com/">this</a> to compose your answer.</p>
+
+            <br>
+
+            <div class="form-group">
+                {{ form.area_of_interest.label_tag }}<br>
+                <p class="help-block">{{ form.area_of_interest.help_text }}</p>
+                {% render_field form.area_of_interest class="form-control" %}
+                {{ form.area_of_interest.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.bio.label_tag }}<br>
+                <p class="help-block">{{ form.bio.help_text }}</p>
+                {% render_field form.bio class="form-control" %}
+                {{ form.bio.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.essay_interest.label_tag }}<br>
+                <p class="help-block">{{ form.essay_interest.help_text }}</p>
+                {% render_field form.essay_interest class="form-control" %}
+                {{ form.essay_interest.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.essay_ideas.label_tag }}<br>
+                <p class="help-block">{{ form.essay_ideas.help_text }}</p>
+                {% render_field form.essay_ideas class="form-control" %}
+                {{ form.essay_ideas.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.events.label_tag }}<br>
+                <p class="help-block">{{ form.events.help_text }}</p>
+                {% render_field form.events class="form-control" %}
+                {{ form.events.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.events_detail.label_tag }}<br>
+                <p class="help-block">{{ form.events_detail.help_text }}</p>
+                {% render_field form.events_detail class="form-control" %}
+                {{ form.events_detail.errors }}
+            </div>
+
+            <h2>Academic and Work Information</h2>
+
+            <p>This section collects information about your academic and work background, which helps us understand more about what your interests and experiences are. OpenCon has a focus on students and early career professionals, and welcomes applicants from all academic backgrounds.</p>
+
+            <br>
+
+            <div class="form-group">
+                {{ form.affiliation_1.label_tag }}<br>
+                <p class="help-block">{{ form.affiliation_1.help_text }}</p>
+                {% render_field form.affiliation_1 class="form-control" %}
+                {{ form.affiliation_1.errors }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_affiliation_2">Other Affiliations (Optional)</label><br>
+                <p>Leave these blank if not applicable.</p>
+                {% render_field form.affiliation_2 class="form-control" %}
+                {{ form.affiliation_2.errors }}
+                {% render_field form.affiliation_3 class="form-control" %}
+                {{ form.affiliation_3.errors }}
+                {% render_field form.affiliation_4 class="form-control" %}
+                {{ form.affiliation_4.errors }}
+                {% render_field form.affiliation_5 class="form-control" %}
+                {{ form.affiliation_5.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.profession.label_tag }}<br>
+                <p class="help-block">{{ form.profession.help_text }}</p>
+                {% render_field form.profession class="form-control" %}
+                {{ form.profession.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.experience.label_tag }}<br>
+                <p class="help-block">{{ form.experience.help_text }}</p>
+                {% render_field form.experience class="form-control" %}
+                {{ form.experience.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.degrees.label_tag }}<br>
+                <p class="help-block">{{ form.degrees.help_text }}</p>
+                {% render_field form.degrees class="form-control" %}
+                {{ form.degrees.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.field.label_tag }}<br>
+                <p class="help-block">{{ form.field.help_text }}</p>
+                {% render_field form.field class="form-control" %}
+                {{ form.field.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.orcid.label_tag }}<br>
+                <p class="help-block">{{ form.orcid.help_text }}</p>
+                {% render_field form.orcid class="form-control" %}
+                {{ form.orcid.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.skills.label_tag }}<br>
+                <p class="help-block">{{ form.skills.help_text }}</p>
+                {% render_field form.skills class="form-control" %}
+                {{ form.skills.errors }}
+            </div>
+
+            <h2>Location Information</h2>
+
+            <p>OpenCon is a global conference, and we seek to bring together people from around the world. Please answer the following questions to tell us more about where you are from and where you live now. If you are applying for a travel scholarship, this information helps us determine your travel needs.</p>
+
+            <br>
+
+             <div class="form-group">
+                {{ form.citizenship.label_tag }}<br>
+                <p class="help-block">{{ form.citizenship.help_text }}</p>
+                {% render_field form.citizenship class="form-control" %}
+                {{ form.citizenship.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.residence.label_tag }}<br>
+                <p class="help-block">{{ form.residence.help_text }}</p>
+                {% render_field form.residence class="form-control" %}
+                {{ form.residence.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.location.label_tag }}<br>
+                <p class="help-block">{{ form.location.help_text }}</p>
+                {% render_field form.location class="form-control" %}
+                {{ form.location.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.airport.label_tag }}<br>
+                <p class="help-block">{{ form.airport.help_text }}</p>
+                {% render_field form.airport class="form-control" %}
+                {{ form.airport.errors }}
+            </div>
+
+             <h2>Demographic Information</h2>
+
+            <p>This section collects demographic information about you. These questions are particularly important for OpenCon's efforts to support diversity, equity, and inclusion. If you do not feel comfortable sharing this information, most of the questions let you opt-out. </p>
+
+            <br>
+
+            <a name="id_gender"></a>{# DO NOT DELETE: anchor included here, so that it's possible to link here from error list, which links to #id_gender but widgets are #id_gender_0 and #id_gender_1 #}
+            <div class="form-group">
+                {{ form.gender.label_tag }}<br>
+                <p class="help-block">{{ form.gender.help_text }}</p>
+                {% render_field form.gender class="form-control" %}
+                {{ form.gender.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.age.label_tag }}<br>
+                <p class="help-block">{{ form.age.help_text }}</p>
+                {% render_field form.age class="form-control" %}
+                {{ form.age.errors }}
+            </div>
+
+            <a name="id_ethnicity"></a>{# DO NOT DELETE: anchor included here, so that it's possible to link here from error list, which links to #id_ethnicity but widgets are #id_ethnicity_0 and #id_ethnicity_1 #}
+            <div class="form-group">
+                {{ form.ethnicity.label_tag }}<br>
+                <p class="help-block">{{ form.ethnicity.help_text }}</p>
+                {% render_field form.ethnicity class="form-control" %}
+                {{ form.ethnicity.errors }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_language_2">Languages Spoken (Optional)^:</label><br>
+                <p class="help-block">Please indicate below the languages you speak at an intermediate level or higher. You may enter up to four. While OpenCon 2018 will be conducted in English, there are opportunities within the OpenCon community to engage in activities in other languages. This information is helpful for organizing purposes.</p>
+                {% render_field form.language_1 class="form-control" %}
+                {{ form.language_1.errors }}
+                {% render_field form.language_2 class="form-control" %}
+                {{ form.language_2.errors }}
+                {% render_field form.language_3 class="form-control" %}
+                {{ form.language_3.errors }}
+                {% render_field form.language_4 class="form-control" %}
+                {{ form.language_4.errors }}
+            </div>
+
+            <h2>Scholarship Application</h2>
+
+            <p><em>If you are applying for a scholarship sponsored by an institution or organization, please select "Full Scholarship" and indicate "Not Applicable" for fundraising ability below. Sponsored scholarships include all eligible expenses by default.</em></p>
+    {% comment %}
+            <p><em>Please skip this section if you are not applying for a scholarship, although note that attendance at OpenCon is still by application only regardless of whether you need a scholarship.</em></p>
+    {% endcomment %}
+
+            <p>OpenCon is a global event that seeks to bring together a diverse, globally-representative group of participants, regardless of their ability to pay for travel and expenses. Therefore, we seek to allocate our limited scholarship funding carefully to the participants who need it most. This section of the application collects the information we need to award scholarships as equitably as possible.</p>
+
+            <p>Travel scholarships are available for roundtrip travel to Toronto, shared hotel accommodation, conference registration (including most meals and transit to the venue from the conference hotel), and <a href="http://www.cic.gc.ca/english/visit/visas-tool.asp">visa application fees</a>. Travel scholarships do not cover other expenses, including meals outside the conference, transit to and from the airport, and travel insurance. Please note that scholarship travel must be booked by our travel agent, and no scholarship checks or reimbursements will be offered.</p>
+
+            <p>For further details on travel scholarships and what expenses are covered, see our <a href="http://www.opencon2018.org/faq#T2" target="_blank">FAQ</a>.</p>
+
+            <p>Our general scholarship fund prioritizes invited applicants who are least likely to have access to funding of their own (for example, those from lower income countries or those very early in their careers). If your personal circumstances allow you access to travel funding, you are still welcome to apply for a scholarship, but we strongly encourage you to seek funding that you can partially or fully contribute toward your attendance so that scholarships can go to those who couldn’t attend otherwise).</p>
+            <br>
+
+            <div class="form-group">
+                {{ form.expenses.label_tag }}<br>
+                <p class="help-block">{{ form.expenses.help_text }}</p>
+                {% render_field form.expenses class="form-control" %}
+                {{ form.expenses.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.fundraising_potential.label_tag }}<br>
+                <p class="help-block">{{ form.fundraising_potential.help_text }}</p>
+                {% render_field form.fundraising_potential class="form-control" %}
+                {{ form.fundraising_potential.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.scholarship_comments.label_tag }}<br>
+                <p class="help-block">{{ form.scholarship_comments.help_text }}</p>
+                {% render_field form.scholarship_comments class="form-control" %}
+                {{ form.scholarship_comments.errors }}
+            </div>
+
+            <h2>Final Step</h2>
+
+            <p>Just a few more questions and then you’re done!</p>
+
+            <br>
+
+            <div class="form-group">
+                {{ form.comments.label_tag }}<br>
+                <p class="help-block">{{ form.comments.help_text }}</p>
+                {% render_field form.comments class="form-control" %}
+                {{ form.comments.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.acknowledgments.label_tag }}<br>
+                <p class="help-block">{{ form.acknowledgments.help_text }}</p>
+                {% render_field form.acknowledgments class="form-control" %}
+                {{ form.acknowledgments.errors }}
+            </div>
+
+            <div class="form-group">
+                {{ form.permissions.label_tag }}<br>
+                <p class="help-block">{{ form.permissions.help_text }}</p>
+                {% render_field form.permissions class="form-control" %}
+                {{ form.permissions.errors }}
+            </div>
+
+            {# {{ form|bootstrap }} #}
+
+            <input type="submit" name="_save" class="btn btn-primary" style="width: 10em; padding-top: 8px; padding-bottom: 8px;" value="Save for Later">
+            <input type="submit" name="_submit" class="btn btn-primary" style="width: 10em; padding-top: 8px; padding-bottom: 8px;" value="Submit">
+
+         </form>
+        <br/>
+        <br/>
+        <br/>
+        <hr/>
+        <div class="footer">
+            <p><a href="http://www.opencon2018.org/" target="_blank">OpenCon 2018 Home</a><br>
+            <a href="http://www.opencon2018.org/code_of_conduct" target="_blank">Code of Conduct</a><br>
+            <a href="http://www.opencon2018.org/privacy" target="_blank">Privacy Policy</a><br>
+            <a href="http://www.opencon2018.org/faq" target="_blank">FAQ</a></p>
+            <p style="padding-top: 8px"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a></p>
+            <br>
+            <br>
+
+        </div>
+ </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ form.media }}
+{% endblock %}

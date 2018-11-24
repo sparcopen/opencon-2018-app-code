@@ -1,0 +1,68 @@
+﻿{% extends 'application/base.html' %}
+
+{% load widget_tweaks %}{# django-widget-tweaks provides "render_field" -- needs to be in #requirements.txt + enabled in settings.py #}
+
+{% load bootstrap %}
+
+{% block content %}
+
+    {# #todo -- format this for organizations #}
+    <style>.form-group li label { font-weight: normal; }</style>
+    <div class="col-md-6 col-md-offset-3">
+
+        <p class="text-center"><img width="70%" height="70%" src="/static/img/logo-opencon2018-1200x360.png"/></p>
+
+        {% if organization %}
+            {% if organization.name or organization.image or organization.text %}
+            {# "Use of actual parentheses in the if tag is invalid syntax (...) use nested if tags. #}
+            <div style="background-color: #f0f0f0; padding-left: 5px; padding-right: 5px;">
+                <hr>
+                {% if organization.name %}<h1 class="text-center">{{ organization.name }}</h1>{% endif %}
+                {% if organization.image %}<p style="text-align: center;"><img src="/media/{{ organization.image }}"/></p>{% endif %}
+                {% if organization.text %}{{ organization.text | safe }}{% endif %}
+                <hr>
+            </div>
+            {% endif %}
+        {% endif %}
+
+        <h1 class="text-center">Application Form</h1>
+
+         <p>OpenCon is the conference and community for students and early career professionals interested in advancing Open Access, Open Education and Open Data. OpenCon 2018 will be held on November 2-4 in Toronto, Canada. Each year, OpenCon brings together a diverse, representative, and engaged group of participants, with travel scholarships available to most participants. For this reason, attendance at OpenCon 2018 is by application only.</p>
+
+        <p>The benefits of applying for OpenCon 2018 extend far beyond attending the Toronto meeting. It’s an opportunity to find collaborators, get connected with scholarships to attend related conferences, and be recognized by the community for the work you do to promote Open Access, Open Education and Open Data. To find out more about OpenCon and our issue areas before applying, <a href="http://www.opencon2018.org/" target="_blank">click here</a>.</p>
+
+        <p><strong>Note:</strong> information you provide through this form is subject to the OpenCon <a href="http://www.opencon2018.org/privacy" target="_blank">Privacy Policy</a>. Questions marked with a caret (^) will be released as Open Data, and you will have the opportunity to give OpenCon additional permission to share your essay questions and other information. All questions are required unless otherwise noted. Please visit our <a href="http://www.opencon2018.org/faq" target="_blank">FAQ</a> if you have questions.</p>
+
+
+        <hr/>
+
+    </div>
+
+    {% if form.errors %}
+    <div class="col-md-6 col-md-offset-3">
+        <p style = "text-align: center; background-color: yellow; color: red"><strong>Your application contains errors<br>(please correct them below and re-submit)</strong></p>
+        <script>$(window).ready(function() { remove_overlap(); });</script>
+    </div>
+    {% endif %}
+
+    <div class="col-md-6 col-md-offset-3">
+        <a style="margin-right: 80px ; margin-top: 55px" href="#" id="check_mail" class="btn btn-primary">Start Application</a>
+        <form action="{{ action_url }}" method="post">
+            {% csrf_token %}
+            <div id="overlapping_div"></div>
+            {{ form|bootstrap }}
+            <input type="submit" name="_save" class="btn btn-primary" value="Save for later">
+            <input type="submit" name="_submit" class="btn btn-primary" value="Submit">
+        </form>
+        <br/>
+        <br/>
+        <br/>
+        <hr/>
+        <p>Return to <a href="http://www.opencon2018.org/" target="_blank">OpenCon Main Website</a>.</p>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ form.media }}
+{% endblock %}

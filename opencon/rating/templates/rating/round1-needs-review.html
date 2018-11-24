@@ -1,0 +1,62 @@
+{% extends 'rating/base.html' %}
+{#{% load opencon %}#}
+{% load widget_tweaks %}{# django-widget-tweaks needs to be in #requirements.txt + enabled in settings.py -- provides "render_field" #templatetag #}
+{% block content %}
+
+<h2>Filter Applications</h2>
+
+<p>This tool allows you to filter Round 1 applications so that you can rate ones that match your interests and experience. You can filter by issue area, academic field, or nationality — or any combination thereof. To use the filter, expand the menus below and select the options you would like to filter by. Click "Filter" and a list of applications will appear. Click an application to rate it. Once you submit your rating, you will be returned to this page.</p>
+<p>Note that the more specific you get with the filter, the fewer applications that will match. If the filter doesn't return any results, try checking more boxes, or only filtering by one type of criteria. If you would prefer to be automatically assigned applications to rate, select the "R1 Rate" tab above.</p>
+<br>
+
+<form method="get">
+
+    <br>
+    <details class="filter-detail">
+    <summary>Filter by Issue Area</summary>
+        <div class="form-filteritem">
+          {{ filter.form.area_of_interest.label_tag }}
+          {#<p>Select all that apply.</p>#}
+          {% render_field filter.form.area_of_interest class="form-control" %}
+        </div>
+    </details>
+
+    <details class="filter-detail">
+    <summary>Filter by Academic Field</summary>
+        <div class="form-filteritem">
+          {{ filter.form.field.label_tag }}
+          {#<p>Select all that apply.</p>#}
+          {% render_field filter.form.field class="form-control" %}
+        </div>
+    </details>
+    
+    <details class="filter-detail">
+    <summary>Filter by Country</summary>
+        <div class="form-filteritem">
+          {{ filter.form.citizenship.label_tag }}
+          {#<p>Select all that apply.</p>#}
+          {% render_field filter.form.citizenship class="form-control" %}
+        </div>
+    </details>
+    
+    <br>
+      <button type="submit" class="btn btn-primary">Apply Filter</button>
+      <button class="btn btn-primary"><a href="{% url 'rating:round1_needs_review' %}">&nbsp;Start Over&nbsp;</a></button>
+
+</form>
+
+{% if request.GET %}
+<br><hr>
+<h2>{% if request.GET %}Matching Applications{% else %}Available for Rating{%endif %}</h2>
+<ul class="search-results">
+{% for filteritem in filter.qs %}
+  <li><a href="{% url 'rating:rate_round1_by_application' filteritem.pk %}{% if request.GET %}?return={{ request.get_full_path | urlencode }}{% endif %}">{{ filteritem.first_name }} {{ filteritem.last_name }}, {{ filteritem.field_expanded }} ({{ filteritem.citizenship_expanded }})</a></li>
+{% empty %}
+  <li>No matching applications found. Try widening your criteria.</li>
+{% endfor %}
+</ul>
+
+<button class="btn btn-primary"><a href="{% url 'rating:round1_needs_review' %}">Start Over</a></button>
+{% endif %}
+
+{% endblock %}
